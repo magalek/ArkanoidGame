@@ -13,12 +13,9 @@ public class ScoreManager : MonoManager {
     private BlockManager blockManager;
     private GameManager gameManager;
 
-    private void OnEnable() {
+    private void Start() {
         blockManager = ManagerService.Instance.Get<BlockManager>();
         gameManager = ManagerService.Instance.Get<GameManager>();
-    }
-
-    private void Start() {
         LoadHighScore();
         blockManager.BlockDestroyed += OnBlockDestroyed;
         gameManager.Restarting += OnRestarting;

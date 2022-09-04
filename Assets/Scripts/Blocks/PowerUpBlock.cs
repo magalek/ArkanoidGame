@@ -8,7 +8,7 @@ public class PowerUpBlock : SimpleBlock {
 
     private PlayerManager playerManager;
 
-    private void OnEnable() {
+    private void Start() {
         playerManager = ManagerService.Instance.Get<PlayerManager>();
     }
 

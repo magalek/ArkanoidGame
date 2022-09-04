@@ -11,12 +11,9 @@ public class UIGameOver : MonoBehaviour, IUIWindow {
     private GameManager gameManager;
     private SceneManager sceneManager;
 
-    private void OnEnable() {
+    private void Start() {
         gameManager = ManagerService.Instance.Get<GameManager>();
         sceneManager = ManagerService.Instance.Get<SceneManager>();
-    }
-
-    private void Start() {
         restartButton.onClick.AddListener(OnRestartButtonClick);
         mainMenuButton.onClick.AddListener(OnMainMenuButtonClick);
     }

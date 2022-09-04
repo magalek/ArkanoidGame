@@ -4,12 +4,9 @@ public class CloneBall : Ball {
 
     private GameManager gameManager;
 
-    protected override void OnEnable() {
-        gameManager = ManagerService.Instance.Get<GameManager>();
-    }
-
     protected override void Start() {
         base.Start();
+        gameManager = ManagerService.Instance.Get<GameManager>();
         gameManager.StartingNew += OnLevelRestart;
         gameManager.Restarting += OnLevelRestart;
     }

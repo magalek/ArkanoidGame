@@ -26,11 +26,9 @@ public class Ball : MonoBehaviour
         rigidbodyRef = GetComponent<Rigidbody2D>();
     }
 
-    protected virtual void OnEnable() {
+    protected virtual void Start() {
         livesManager = ManagerService.Instance.Get<LivesManager>();
     }
-
-    protected virtual void Start() { }
 
     private void LateUpdate() {
         lastVelocity = rigidbodyRef.velocity;

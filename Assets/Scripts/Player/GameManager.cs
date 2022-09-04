@@ -35,15 +35,13 @@ public class GameManager : MonoManager {
 
     private UIManager uiGame;
 
-    private void OnEnable() {
+    private IEnumerator Start() {
         livesManager = ManagerService.Instance.Get<LivesManager>();
         scoreManager = ManagerService.Instance.Get<ScoreManager>();
         blockManager = ManagerService.Instance.Get<BlockManager>();
         playerManager = ManagerService.Instance.Get<PlayerManager>();
         uiGame = ManagerService.Instance.Get<UIManager>();
-    }
 
-    private IEnumerator Start() {
         livesManager.LivesDepleted += OnLivesDepleted;
         yield return null;
         if (continueUsedContainer.HasData && (continueUsedContainer.Load() == true)) LoadGame();

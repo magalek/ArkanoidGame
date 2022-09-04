@@ -20,11 +20,8 @@ public class LivesManager : MonoManager {
         MaxLives = startingLives;
     }
 
-    private void OnEnable() {
-        gameManager = ManagerService.Instance.Get<GameManager>();
-    }
-
     private void Start() {
+        gameManager = ManagerService.Instance.Get<GameManager>();
         gameManager.Restarting += OnRestarting;
         gameManager.Continuing += OnContinuing;
     }

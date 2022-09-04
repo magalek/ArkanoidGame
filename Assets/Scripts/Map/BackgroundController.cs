@@ -15,11 +15,9 @@ public class BackgroundController : MonoBehaviour
         backgroundRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void OnEnable() {
-        blockGenerator = ManagerService.Instance.Get<BlockManager>();
-    }
-
     private void Start() {
+        blockGenerator = ManagerService.Instance.Get<BlockManager>();
+
         blockGenerator.GeneratedBlocks += OnBlocksGenerated;
     }
 

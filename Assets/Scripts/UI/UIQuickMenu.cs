@@ -30,7 +30,7 @@ public class UIQuickMenu : MonoBehaviour {
         exitButton.onClick.AddListener(OnExitButtonClicked);
     }
 
-    private void OnEnable() {
+    private void Start() {
         sceneManager = ManagerService.Instance.Get<SceneManager>();
         gameManager = ManagerService.Instance.Get<GameManager>();
     }

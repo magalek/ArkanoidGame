@@ -14,11 +14,8 @@ public class UIMainMenuManager : MonoManager
 
     private SceneManager sceneManager;
 
-    private void OnEnable() {
-        sceneManager = ManagerService.Instance.Get<SceneManager>();
-    }
-
     private void Start() {
+        sceneManager = ManagerService.Instance.Get<SceneManager>();
         continueButton.interactable = saveContainer.HasData;
         playButton.onClick.AddListener(OnPlayButtonClicked);
         continueButton.onClick.AddListener(OnContinueButtonClicked);

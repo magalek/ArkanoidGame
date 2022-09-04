@@ -11,11 +11,8 @@ public class UIScore : MonoBehaviour {
 
     private ScoreManager scoreManager;
 
-    private void OnEnable() {
-        scoreManager = ManagerService.Instance.Get<ScoreManager>();
-    }
-
     private void Start() {
+        scoreManager = ManagerService.Instance.Get<ScoreManager>();
         scoreManager.ScoreChanged += OnScoreChanged;
         scoreManager.HighScoreChanged += OnHighScoreChanged;
         OnScoreChanged();

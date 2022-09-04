@@ -25,7 +25,6 @@ public class ManagerService : MonoBehaviour {
     public T Get<T>() where T : class, IManager {
         if (managers.ContainsKey(typeof(T))) {
             IManager manager = managers[typeof(T)];
-            Debug.Log($"Getting {manager.GetType().Name}");
             return (T)manager;
         }
         Debug.LogWarning($"No manager of type {typeof(T).Name} registered.");

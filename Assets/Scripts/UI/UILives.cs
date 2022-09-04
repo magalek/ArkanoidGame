@@ -10,11 +10,8 @@ public class UILives : MonoBehaviour
     private LivesManager livesManager;
     private List<UILifeIcon> icons = new List<UILifeIcon>();
 
-    private void OnEnable() {
-        livesManager = ManagerService.Instance.Get<LivesManager>();
-    }
-
     private void Start() {
+        livesManager = ManagerService.Instance.Get<LivesManager>();
         AddIcons(livesManager.MaxLives);
         livesManager.LivesChanged += OnLivesChanged;
     }

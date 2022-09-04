@@ -13,11 +13,9 @@ public class PlayerManager : MonoManager {
         Ball = GetComponentInChildren<Ball>();
     }
 
-    private void OnEnable() {
-        gameManager = ManagerService.Instance.Get<GameManager>();
-    }
-
     private void Start() {
+        gameManager = ManagerService.Instance.Get<GameManager>();
+
         gameManager.Restarting += OnRestarting;
         gameManager.StartingNew += OnRestarting;
         gameManager.Continuing += OnContinuing;
